@@ -1,0 +1,7 @@
+.tituloClass {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: black;
+  backdrop-filter: drop-shadow(4px 4px 10px blue);
+}
