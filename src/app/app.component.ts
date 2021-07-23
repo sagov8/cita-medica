@@ -13,4 +13,8 @@ export class AppComponent {
   agregarCita(cita: any) {
     this.listCitas.push(cita);
   }
+
+  eliminarCitaList(index: number){
+    this.listCitas.splice(index, 1);
+  }
 }
