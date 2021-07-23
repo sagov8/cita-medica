@@ -3,38 +3,75 @@
     <h5 class="card-title text-center">Agregar cita</h5>
   </div>
   <div class="card-body">
+    <div *ngIf="formularioIncorrecto" class="text-center">
+      <span class="badge rounded-pill bg-danger"
+        >Todos los campos son obligatorios</span
+      >
+    </div>
     <div class="form-group mb-3">
       <label class="card-title" for="nombre">Nombre</label>
       <input
+        [(ngModel)]="nombre"
         type="text"
         id="nombre"
         class="form-control"
         placeholder="Ingrese su nombre"
       />
     </div>
+
     <div class="form-group mb-3">
       <label class="card-title" for="documento">Documento</label>
-      
-      <input type="number" id="documentos" class="form-control" />
+      <input
+        [(ngModel)]="documento"
+        type="number"
+        id="documentos"
+        class="form-control"
+        placeholder="Ingrese su número de documento"
+      />
+    </div>
+    <div class="row mt-2 mb-3">
+      <div class="col-lg-6">
+        <label class="card-title">Direccion</label>
+        <span
+          ><input
+            [(ngModel)]="direccion"
+            type="text"
+            id="direccion"
+            class="form-control"
+            placeholder="Dirección"
+        /></span>
+      </div>
+      <div class="col-lg-6">
+        <label class="card-title">Teléfono</label>
+        <span
+          ><input
+            [(ngModel)]="telefono"
+            type="tel"
+            id="telefono"
+            class="form-control"
+            placeholder="Teléfono"
+        /></span>
+      </div>
     </div>
     <div class="form-group mb-3">
       <label class="card-title" for="fecha">Fecha</label>
-      <input type="date" id="fecha" class="form-control" />
+      <input [(ngModel)]="fecha" type="date" id="fecha" class="form-control" />
     </div>
     <div class="form-group mb-3">
       <label class="card-title" for="hora">Hora</label>
-      <input type="time" id="hora" class="form-control" />
+      <input [(ngModel)]="hora" type="time" id="hora" class="form-control" />
     </div>
     <div class="form-group mb-3">
       <label class="card-title" for="sintomas">Síntomas</label>
       <textarea
+        [(ngModel)]="sintomas"
         id="sintomas"
         rows="3"
         class="form-control"
         placeholder="Ingrese los síntomas"
       ></textarea>
     </div>
-    <button style="width: 100%" class="btn btn-primary btn-block">
+    <button style="width: 100%" (click)="agregarCita()" class="btn btn-primary btn-block">
       Agregar cita
     </button>
   </div>

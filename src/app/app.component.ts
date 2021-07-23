@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cita-medica';
+
+  listCitas: any[] = [];
+
+  agregarCita(cita: any) {
+    this.listCitas.push(cita);
+  }
 }
